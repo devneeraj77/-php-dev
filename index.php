@@ -151,7 +151,7 @@
                 </svg></a></li>
         </ul>
     </footer>
-    <div style="font-size: x-small; padding-inline: 20px; ">tribute by neeraj with &copy; 2025, All rights reserve</div>
+    <div style="font-size: x-small; padding-inline: 20px;">Tribute by neeraj with &copy; 2025, All rights reserve</div>
 </body>
 
 </html>

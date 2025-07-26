@@ -38,7 +38,6 @@ h1 {
 
 img {
     border-radius: 18px;
-
 }
 
 .navlinks {
@@ -48,8 +47,6 @@ img {
 .link {
     padding: 2px;
 }
-
-
 
 img {
     width: 700px;
@@ -70,10 +67,7 @@ img:hover {
     align-items: center;
     margin: 0 auto;
     max-width: 100%;
-
-
 }
-
 
 .imgborderbox {
     border-radius: 18px;
