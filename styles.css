@@ -10,9 +10,22 @@ html,
 
 body {
     margin: 5px;
-    padding: 5px;
+    padding: 5px; 
 }
-
+.div-form{
+    /* border: gold 2px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    /* border: tomato 2px solid; */
+    height: 200px;
+    width: 200px;
+}
+input{
+    
+}
 main {
     margin: 10px;
     padding-inline: 40px;

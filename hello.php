@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,7 @@
         <input type="submit">
     </form> -->
     <?php
-$url = 'https://reqres.in/api/users?page=1';
+$url = 'https://reqres.in/api/users?page=2';
 $response = file_get_contents($url);
 $data = json_decode($response, true);
 $users = $data['data'];
@@ -39,9 +38,6 @@ $users = $data['data'];
         <td><img src="<?= htmlspecialchars($user['avatar']) ?>" alt="avatar" width="50" /></td>
       </tr>
     <?php endforeach; ?>
-
-
-
 </body>
 
 </html>

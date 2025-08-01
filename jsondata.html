@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data</title>
+</head>
+<body>
+    <h1>Data from JSON</h1>
+    <div id="dataContainer">Loading data...</div>
+    <div id="container">
+        <!-- Content will be added here by JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        fetch('get_data.php') 
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); 
+            })
+            .then(data => {
+                const dataContainer = document.getElementById('dataContainer');
+                dataContainer.innerHTML = '';
+
+                if (data.error) {
+                    dataContainer.textContent = 'Error: ' + data.error;
+                } else {
+                    const ul = document.createElement('ul');
+                    if (Array.isArray(data)) {
+                        data.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = JSON.stringify(item);
+                            ul.appendChild(li);
+                        });
+                    } else if (typeof data === 'object' && data !== null) {
+                        for (const key in data) {
+                            if (Object.hasOwnProperty.call(data, key)) {
+                                const li = document.createElement('li');
+                                li.textContent = `${key}: ${JSON.stringify(data[key])}`;
+                                ul.appendChild(li);
+                            }
+                        }
+                    } else {
+                        ul.textContent = JSON.stringify(data);
+                    }
+                    dataContainer.appendChild(ul);
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('dataContainer').textContent = 'Failed to load data.';
+            });
+    </script>
+
+</body>
+</html>

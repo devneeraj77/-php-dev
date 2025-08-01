@@ -13,7 +13,6 @@
 
     <title>tribute page</title>
 </head>
-
 <body>
     <header class="hdr">
         <!-- <nav>
