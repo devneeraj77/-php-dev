@@ -13,7 +13,7 @@
         $key = $_POST['key'];
         $value = $_POST['value'];
 
-        $url = "/set/$key";  
+        $url = "{...}/set/$key";  
         $auth_token = "Bearer <token>";  
 
         $data = json_encode($value);

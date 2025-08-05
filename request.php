@@ -1,49 +1,87 @@
 <?php
 
-  $fname = htmlspecialchars($_REQUEST['fname']);
-  $lname = htmlspecialchars($_REQUEST['lname']);
-  $message = htmlspecialchars($_REQUEST['message']);
-  $updationdate_time = new DateTime("now", new DateTimeZone('Asia/Kolkata'));
-  if (empty($fname && $lname && $message)) {
-    echo "Name is empty";
-  } else {
-    echo $fname;
-    echo " ";
-    echo $lname . "</br>";
-    echo " ";
-    echo $message . "</br>" . $_SERVER['SERVER_NAME']. "</br>" ;
-    echo " ";
-    echo $updationdate_time->format('Y-m-d h:i:s');
-  }
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $database = "";
+  // $fname = htmlspecialchars($_REQUEST['fname']);
+  // $lname = htmlspecialchars($_REQUEST['lname']);
+  // $message = htmlspecialchars($_REQUEST['message']);
+  // $updationdate_time = new DateTime("now", new DateTimeZone('America/New_York'));
+  // if (empty($fname && $lname && $message)) {
+  //   echo "Name is empty";
+  // } else {
+  //   echo $fname;
+  //   echo " ";
+  //   echo $lname . "</br>";
+  //   echo " ";
+  //   echo $message . "</br>" . $_SERVER['SERVER_NAME']. "</br>" ;
+  //   echo " ";
+  //   echo $updationdate_time->format('Y-m-d h:i:s');
+  // }
 
-// // create connection
-// $conn = new mysqli('localhost', 'root', '', '');
-
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//   $fname = htmlspecialchars($_REQUEST['fname']);
-//   $lname = htmlspecialchars($_REQUEST['lname']);
+  $servername = "localhost";
+  $password = "Uc:q]&^5.MU>";
+  $username = "fligzyxx_fixitfusion";
+  $database = "fligzyxx_fixitfusion";
+ 
+  $conn = new mysqli($servername, $password, $username, $database);
   
-//   $sql = "INSERT INTO contactustable VALUES ($fname, $lname)";
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+    
+  $name =  htmlspecialchars($_PSOT['name']);
+  $email = htmlspecialchars($_PSOT['email']) ;
+  $subject = htmlspecialchars($_POST['subject']);
+  $message =  htmlspecialchars($_POST['message']);
+  $updationdate_time = new DateTime("now", new DateTimeZone('America/New_York'));
   
-//   $stmt = $conn->prepare($sql);
-//   $stmt->bind_param("ss", $fname. $lname);
+  $sql = "INSERT INTO contact_form VALUES ($name, $email, $subject, $message, $updationdate_time)";
   
-//   if ($stmt->execute() === TRUE) {
-//     echo "Data saved successfully!";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('ssss', $name, $email, $subject, $message, $updationdate_time);
+  
+  if ($stmt->execute() === TRUE) {
+      echo "Data is saved successfully";
+    } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+   }
+  $stmt->Close();
+  $conn->Close();
+
+
+
+//   $errors = [];
+  
+//   if (empty($name)) {
+//       $errors[] = "Name is empty";
+//   } 
+  
+//   if (empty($email)) {
+//       $errors[] = "Email is empty";
+//   } 
+  
+//   if (empty($subject)) {
+//       $errors[] = "Subject is empty";
+//   } 
+  
+//   if (empty($message)) {
+//       $message = " ";
+//   } 
+  
+//   if (!empty($errors)) {
+//     echo "<h2>Errors:</h2>";
+//     foreach ($errors as $error) {
+//       echo $error . "<br>";
+//     }
 //   } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
+      
+//     echo $name . "</br>";
+//     echo " ";
+//     echo $email . "</br>";
+//     echo " ";
+//     echo $subject . "</br>";
+//     echo " ";
+//     echo $message . "</br>" . $_SERVER['SERVER_NAME']. "</br>" ;
+//     echo " ";
+//     echo $updationdate_time->format('Y-m-d h:i:s');
 //   }
-//   $stmt->close();
-//   $conn->close();
-
-// }
   ?>
