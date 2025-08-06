@@ -1,6 +1,7 @@
 <?php
 session_start(); // Start the session to access session variables // Include the database connection file
 // Check if the user is logged in
+
 if (!isset($_SESSION['username'])) { // Assuming 'username' is stored in the session upon successful login
     header('Location: login.php'); // Redirect to login page if not logged in
     exit();
@@ -9,7 +10,6 @@ if (!isset($_SESSION['username'])) { // Assuming 'username' is stored in the ses
 // Retrieve user information from the session (or fetch from the database using the stored user ID)
 $username = $_SESSION['username'];  // Assuming 'username' is also stored in the session
 
-// $well = print_r(session_status())
 
 // You can fetch more user data from the database using the $userId here
 // For example:
@@ -32,6 +32,7 @@ $username = $_SESSION['username'];  // Assuming 'username' is also stored in the
 <body>
     <div class="container">
         <h2>Welcome, <?php echo $username; ?>!</h2>
+        <p><?php echo $http_response_header ?></p>
         <p>This is your personalized dashboard.</p>
         
         <!-- Display other user information (optional) -->

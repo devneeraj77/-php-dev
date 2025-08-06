@@ -1,4 +1,5 @@
 <?php
+// require_once 'db_connect.php'; // Include the database connection file
 session_start(); // Start the session at the very beginning
 
 // If the user is already logged in, redirect to dashboard

@@ -1,4 +1,5 @@
 <?php
+// require_once 'db_connenct.php'; // Include configuration file for database connection if needed
 session_start();
 
 // Basic validation (replace with database lookup for real applications)
@@ -26,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 } else {
+
     header("Location: login.php"); // Redirect if accessed directly
     exit;
 }
