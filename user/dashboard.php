@@ -10,7 +10,6 @@ if (!isset($_SESSION['username'])) { // Assuming 'username' is stored in the ses
 // Retrieve user information from the session (or fetch from the database using the stored user ID)
 $username = $_SESSION['username'];  // Assuming 'username' is also stored in the session
 
-
 // You can fetch more user data from the database using the $userId here
 // For example:
 // $sql = "SELECT * FROM users WHERE id = ?";
@@ -32,7 +31,6 @@ $username = $_SESSION['username'];  // Assuming 'username' is also stored in the
 <body>
     <div class="container">
         <h2>Welcome, <?php echo $username; ?>!</h2>
-        <p><?php echo $http_response_header ?></p>
         <p>This is your personalized dashboard.</p>
         
         <!-- Display other user information (optional) -->
