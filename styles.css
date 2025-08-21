@@ -190,6 +190,28 @@ h3 {
 
 }
 
+
+.gradient-overlay-left,
+.gradient-overlay-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust width as needed */
+    z-index: 2;
+    pointer-events: none; /* So it doesn't block interaction */
+}
+
+.gradient-overlay-left {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.gradient-overlay-right {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+
 @media (max-width: 1250px) {
     main {
         margin: auto;

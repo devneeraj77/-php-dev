@@ -1,5 +1,4 @@
 <?php
-
   $name = isset($_REQUEST['name']) ? htmlspecialchars(trim($_REQUEST['name'])) : '';
   $email = isset($_REQUEST['email']) ? htmlspecialchars(trim($_REQUEST['email'])) : '';
   $subject = isset($_REQUEST['subject']) ? htmlspecialchars(trim($_REQUEST['subject'])) : '';

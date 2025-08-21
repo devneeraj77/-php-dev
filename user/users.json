@@ -1,0 +1,38 @@
+{
+    "user1": {
+        "username": "user1",
+        "hashPass": "$2y$10$EtvAge9tTvLTMHbB7wX5..M4Z3yOlXRPSKoJhF9P.i\/eJ.YWsgnU2",
+        "last_login": {
+            "date": "2025-08-18 15:45:52.919658",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    },
+    "user2": {
+        "username": "user2",
+        "hashPass": "$2y$10$5\/hSmgk.ZuNjgsq2lh6sgOzC1K55\/y5kE8iec5AOUEGdsF8rKBIE2",
+        "last_login": {
+            "date": "2025-08-07 17:10:13.995353",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    },
+    "nee": {
+        "username": "nee",
+        "hashPass": "$2y$10$PeCso9XFybdWHGMCGv083e8M1e379qElYDzts02hZ44E7u2psTgre",
+        "last_login": {
+            "date": "2025-08-07 17:17:24.285965",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    },
+    "neerajrekwar": {
+        "username": "neerajrekwar",
+        "hashPass": "$2y$10$SW29.36euhbYQoqbjjs0pOvqir\/MRykbqTX30pZQj9wLdWPok7LFi",
+        "last_login": {
+            "date": "2025-08-07 17:40:55.905564",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    }
+}

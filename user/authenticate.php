@@ -6,15 +6,18 @@ session_start();
 // $valid_username = 'user';
 // $valid_password = 'password123'; // In a real application, hash and verify passwords securely
 
+
 $users = [
-    'user1' => 'pass123',
+    'user1' => ':ZPM$^=$IwHf',
     'user2' => 'securepwd',
+    'neerajrekwar' => 'neeraj123',
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
+    
     if (array_key_exists($username, $users) && $users[$username] == $password) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
