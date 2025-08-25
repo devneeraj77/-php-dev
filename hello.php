@@ -38,6 +38,7 @@ $users = $data['data'];
         <td><img src="<?= htmlspecialchars($user['avatar']) ?>" alt="avatar" width="50" /></td>
       </tr>
     <?php endforeach; ?>
+    </table>
 </body>
 
 </html>

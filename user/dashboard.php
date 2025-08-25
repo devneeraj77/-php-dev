@@ -10,7 +10,7 @@ session_start(); // Start the session to access session variables // Include the
     }
     $_SESSION['last_activity'] = time(); // Update last activity time
 // Retrieve user information from the session (or fetch from the database using the stored user ID)
-$username = $_SESSION['username'];  // Assuming 'username' is also stored in the session // Assuming 'username' is also stored in the session
+ // Assuming 'username' is also stored in the session // Assuming 'username' is also stored in the session
 
 // You can fetch more user data from the database using the $userId here
 // For example:
@@ -33,7 +33,7 @@ $username = $_SESSION['username'];  // Assuming 'username' is also stored in the
     $normPassword = $_SESSION['password'] ?? ''; // Assuming password is stored in session, not recommended for production
     $hashPass = password_hash($normPassword, PASSWORD_DEFAULT); // Assuming password is stored in session, not recommended for production
     $userDataToSave = [
-        'username' => $_SESSION['username'],
+        'username' => $username,
         'hashPass' => $hashPass, // Assuming password is stored in session, not recommended for production
         'last_login' => new DateTime("now", new DateTimeZone('Asia/Kolkata')),
     ];

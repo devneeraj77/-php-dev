@@ -7,18 +7,20 @@ session_start();
 // $valid_password = 'password123'; // In a real application, hash and verify passwords securely
 
 
-$users = [
-    'user1' => ':ZPM$^=$IwHf',
-    'user2' => 'securepwd',
-    'neerajrekwar' => 'neeraj123',
-];
+// $users = [
+//     'user1' => ':ZPM$^=$IwHf',
+//     'user2' => 'securepwd',
+//     'neerajrekwar' => 'neeraj123',
+// ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    
-    if (array_key_exists($username, $users) && $users[$username] == $password) {
+
+    $usersData = json_decode(file_get_contents('users.josn'), true);
+
+    if ($usersData($username, $users) && $users[$username] == $password) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         session_regenerate_id(true); // Prevent session fixation
@@ -30,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 } else {
-
     header("Location: login.php"); // Redirect if accessed directly
     exit;
 }

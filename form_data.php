@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
- $stmt = $conn->query('SELECT * FROM products ORDER BY id DESC');
+<?php
+$stmt = $conn->query('SELECT * FROM products ORDER BY id DESC');
 $rows=$stmt->fetchAll();
 ?>
 

@@ -19,17 +19,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 </head>
 
 <body style="height: 100vh;">
-    <main class=" border rounded p-4 w-100 m-auto">
+    <main class=" d-flex flex-column justify-content-center align-items-center  border rounded p-4 w-100 m-auto">
         <h2 class="text-center mb-4">Login</h2>
-        <form action="authenticate.php" method="post">
-            <label for="username" class="">Username
-                <input type="text" id="username" name="username" required>
-            </label>
-            <label for="password" class="form-label">Password
-                <input type="password" id="password" name="password" required>
-            </label>
-            <button type="submit" class="btn btn-primary">Login</button>
+        <form action="auth.php" method="post">
+            <div class="form-group">
+            <label for="username" class="">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn my-3 btn-primary">Login</button>
         </form>
+        <p>Don't have account <a href="sign-up.php">Create account</a></p>
     </main>
 
     <?php
@@ -38,6 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         unset($_SESSION['login_error']);  // Clear the error after displaying
     }
     ?>
+    
 </body>
 
 </html>
