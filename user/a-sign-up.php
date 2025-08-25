@@ -1,8 +1,8 @@
 
 <?php 
 
-$message = ""; 
-$success = ""; 
+$message = "";
+$success = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST['username']); 
@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Basic validation 
    if (empty($username) || empty($password)) { 
        $message = "Username and password are required."; 
+       
        
    } elseif ($password !== $confirmPassword) {
        $message = "Passwords do not match."; 
@@ -22,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Check if username already exists 
       foreach ($users as $user) { 
       if ($user['username'] === $username) {
-          $message = "Username already exists."; break; } } 
+          $message = "Username already exists."; 
+          break; 
+         } 
+      } 
           if (!$message) {
              $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
               $users[] = [
