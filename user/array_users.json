@@ -1,14 +1,18 @@
 [
     {
         "username": "neerajrekwar",
-        "password": "$2y$10$vc9BlaRS8gHOU9\/tf5Kgb.R9UwAld1ShihBviuW7B.579Twdhlx9G"
+        "hashPass": "$2y$10$vc9BlaRS8gHOU9\/tf5Kgb.R9UwAld1ShihBviuW7B.579Twdhlx9G"
     },
     {
         "username": "james",
-        "password": "$2y$10$WYnjQYDb755wlCa9GfzH.eMmlr2hL1B7KoHQUcjYUgrexslt46Qby"
+        "hashPass": "$2y$10$WYnjQYDb755wlCa9GfzH.eMmlr2hL1B7KoHQUcjYUgrexslt46Qby"
     },
     {
         "username": "joegoldburg",
-        "password": "$2y$10$qj\/GiHiN\/7jKTBXV57bnUushMaI\/UbraXNMhalpe4UtyhX4r7NUD6"
+        "hashPass": "$2y$10$qj\/GiHiN\/7jKTBXV57bnUushMaI\/UbraXNMhalpe4UtyhX4r7NUD6"
+    },
+    {
+        "username": "jullie",
+        "hashPass": "$2y$10$p6vKP7j7pWl39ieYI4wfJe6OBynbA3jX\/bEwjSRLryAgbDfoAERVa"
     }
 ]

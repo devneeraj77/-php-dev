@@ -7,8 +7,16 @@ session_start(); // Start the session to access session variables // Include the
         session_destroy();
         header("Location: login.php"); // Redirect to login page
         exit();
+    } 
+
+    if (!isset($_SESSION['username'])) { // Assuming 'username' is stored in the session upon successful login
+        header('Location: login.php'); // Redirect to login page if not logged in
+        exit();
     }
+        
+
     $_SESSION['last_activity'] = time(); // Update last activity time
+    $mylog = time();
 // Retrieve user information from the session (or fetch from the database using the stored user ID)
  // Assuming 'username' is also stored in the session // Assuming 'username' is also stored in the session
 
@@ -43,7 +51,8 @@ session_start(); // Start the session to access session variables // Include the
     $jsonData[$username] = $userDataToSave;
     $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
     file_put_contents($filePath, $jsonString); // Save the updated JSON data back to the file
-// Display the dashboard content
+    // Display the dashboard content
+    
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +66,7 @@ session_start(); // Start the session to access session variables // Include the
     <div class="container">
         <h2>Welcome, <?php echo $username; ?>!</h2>
         <p>This is your personalized dashboard.</p>
+        <p><?php echo $mylog; ?></p>
         
         <!-- Display other user information (optional) -->
         <!-- <p>Email: <?php // echo $userData['email']; ?></p> -->

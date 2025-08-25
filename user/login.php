@@ -21,7 +21,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 <body style="height: 100vh;">
     <main class=" d-flex flex-column justify-content-center align-items-center  border rounded p-4 w-100 m-auto">
         <h2 class="text-center mb-4">Login</h2>
-        <form action="a_auth.php" method="post">
+        <form action="auth.php" method="post">
             <div class="form-group">
             <label for="username" class="">Username</label>
             <input type="text" class="form-control" id="username" name="username" required>

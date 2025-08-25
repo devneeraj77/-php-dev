@@ -1,0 +1,20 @@
+{
+    "jerry": {
+        "username": "jerry",
+        "hashPass": "$2y$10$eoJjRqNcPm6tCxjrPKKPxeVKpzUfqCiu9yQkRiST.\/.OsVMoGosBa",
+        "last_login": {
+            "date": "2025-08-25 18:51:41.096761",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    },
+    "joegoldburg": {
+        "username": "joegoldburg",
+        "hashPass": "$2y$10$ziQwH2Lu9bf74bbnPbL9gubuclULUY.KdnfmMCyrEVWPLYTV.090O",
+        "last_login": {
+            "date": "2025-08-25 18:49:39.385856",
+            "timezone_type": 3,
+            "timezone": "Asia\/Kolkata"
+        }
+    }
+}

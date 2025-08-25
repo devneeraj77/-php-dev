@@ -8,15 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $inputPass = $_POST['password'];
 
     $usersData = json_decode(file_get_contents('array_users.json'), true);
+    // $usersData = json_decode(file_get_contents('object_users.json'), true);
 
     foreach ($usersData as $user) {
-        if ($user['username'] === $inputUser && password_verify($inputPass, $user['password'])) {
+        if ($user['username'] === $inputUser && password_verify($inputPass, $user['hashPass'])) {
             $_SESSION['username'] = $inputUser;
             header("Location: dashboard.php");
             exit();
         }
     }
-
     $error = "Invalid username or password.";
 }
 ?>
