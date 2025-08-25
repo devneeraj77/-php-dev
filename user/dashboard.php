@@ -20,7 +20,7 @@ session_start(); // Start the session to access session variables // Include the
 // $stmt->execute();
 // $result = $stmt->get_result();
 // $userData = $result->fetch_assoc();
-    $filePath = 'users.json';
+    $filePath = 'araay_users.json' || 'object_users.json';
     $jsonData = [];
     if (file_exists($filePath)) {
         $fileContent = file_get_contents($filePath);
@@ -30,6 +30,7 @@ session_start(); // Start the session to access session variables // Include the
         }
     }
 
+    $username = $_SESSION['username'] ?? '';
     $normPassword = $_SESSION['password'] ?? ''; // Assuming password is stored in session, not recommended for production
     $hashPass = password_hash($normPassword, PASSWORD_DEFAULT); // Assuming password is stored in session, not recommended for production
     $userDataToSave = [

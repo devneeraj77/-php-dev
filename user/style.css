@@ -1,0 +1,68 @@
+/* Container for responsive tables */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Base table styles */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Table header styles */
+.user-table thead {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #ddd;
+}
+
+.user-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table body row styles */
+.user-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Zebra striping for improved readability */
+.user-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect on rows */
+.user-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Table cell styles */
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle; /* Aligns content vertically */
+}
+
+/* Image styling */
+.user-table td img {
+  border-radius: 50%; /* Makes avatars circular */
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  /* Hides the email column on mobile */
+  .user-table td:nth-of-type(2),
+  .user-table th:nth-of-type(2) {
+    display: none;
+  }
+}

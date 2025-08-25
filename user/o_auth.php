@@ -12,17 +12,18 @@ session_start();
 //     'user2' => 'securepwd',
 //     'neerajrekwar' => 'neeraj123',
 // ];
+$message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-
-    $usersData = json_decode(file_get_contents('users.josn'), true);
+    $usersData = json_decode(file_get_contents('object_users.josn'), true);
 
     if ($usersData($username, $users) && $users[$username] == $password) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $message = 'user verification!';
         session_regenerate_id(true); // Prevent session fixation
         header("Location: dashboard.php");
         exit;

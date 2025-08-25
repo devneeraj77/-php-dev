@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users Data</title>
+    <link rel="stylesheet" href="/sytle.css">
 </head>
 <body>
 <?php
@@ -38,8 +39,9 @@ if (file_exists($objectFilePath)) {
     <tr>
       
       <th>USERNAME</th>
+      <th>HASHPASS</th>
       <th>IMAGE</th>
-
+      
     </tr>
     <?php foreach ($ausers ?? [] as $user): ?>
       <tr style="width:50px;">
@@ -48,15 +50,15 @@ if (file_exists($objectFilePath)) {
         <td><img src="https://i.pravatar.cc/150?img=<?= mt_rand(1, 50) ?>" alt="avatar" width="50" /></td>
       </tr>
     <?php endforeach; ?>
-    </table>
+  </table>
 </section>
 <section>
-<h2 style="text-align: center;">Object User Table</h2>
+  <h2 style="text-align: center;">Object User Table</h2>
   <table>
     <tr>
       
+      <th>ID</th>
       <th>USERNAME</th>
-      <th>HASHPASS</th>
       <th>IMAGE</th>
 
     </tr>
